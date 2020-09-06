@@ -11,9 +11,9 @@ For a long time I have been working as a System Administrator Windows / Linux. A
 
 ## Skills
 
-- **Programming languages and technologies:**HTML5 (Semantic, cross-browser, adaptive and responsive layout),CSS\SCSS\LESS\PostCSS,JS.
-- **Frameworks and Libraries:**Bootstrap 4,JQuery, a bit of experience with React.
-- **Tools:**Gulp,VS_Code,Github.
+- **Programming languages and technologies:** HTML5 (Semantic, cross-browser, adaptive and responsive layout),CSS\SCSS\LESS\PostCSS,JS.
+- **Frameworks and Libraries:** Bootstrap 4,JQuery, a bit of experience with React.
+- **Tools:** Gulp,VS_Code,Github.
 
 ## Code examples
 
