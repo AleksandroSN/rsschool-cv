@@ -4,12 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rsschool-2020-Q3</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kufam:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header class="header">
-      <a class="header-logo"></a>
+      <!-- <a class="header-logo"></a> -->
+
       <nav class="header__nav">
+        <button class="header__burger" type="button" aria-label="Menu">
+          <svg
+            width="50"
+            height="50"
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            viewBox="0 0 50 50"
+            aria-hidden="true"
+          >
+            <circle class="svg-burger-circle" cx="25" cy="25" r="25" />
+            <rect x="13" y="19" width="24" height="2" fill="white" />
+            <rect x="13" y="29" width="24" height="2" fill="white" />
+            <rect x="13" y="24" width="24" height="2" fill="white" />
+          </svg>
+        </button>
         <ul class="header__nav-menu">
           <li class="nav-menu menu-item">
             <a class="menu-item__link" href="#Summary">Summary</a>
@@ -128,13 +148,14 @@
       <section class="mainSection">
         <div class="mainSection__photo">
           <picture>
-            <source srcset="./img/IMG_2020.webp" type="image/webp">
+            <source srcset="./img/IMG_2020.webp" type="image/webp" />
             <img src="./img/IMG_2020.jpg" alt="profilePhoto" />
           </picture>
         </div>
 
         <div class="mainSection__text">
           <h1>Semyon Aleksandrov</h1>
+          <p>Junior Front-end / Junior Full-stack</p>
           <article id="Summary">
             <h2 class="Summary__title">Summary</h2>
             <p class="Summary__text">
@@ -147,28 +168,32 @@
           </article>
           <article id="Skills">
             <h2 class="Skills__title">Skills</h2>
-            <p class="Skills__text">
-              <h3>Programming languages and technologies:</h3>
-              HTML5 (Semantic,cross-browser, adaptive and responsive layout),
-              CSS\SCSS\LESS\PostCSS,JS. 
-              <h3>Frameworks and Libraries:</h3>
-              Bootstrap 4,JQuery, a bit of experience with React. 
-              <h3>Tools:</h3>Gulp,VS_Code,Github.
-            </p>
+
+            <h3>Programming languages and technologies:</h3>
+            HTML5 (Semantic,cross-browser, adaptive and responsive layout),
+            CSS\SCSS\LESS\PostCSS,JS.
+            <h3>Frameworks and Libraries:</h3>
+            Bootstrap 4,JQuery, a bit of experience with React.
+            <h3>Tools:</h3>
+            Gulp,VS_Code,Github.
           </article>
           <article id="ExpAndEducation">
             <h2 class="ExpAndEducation__title">Expirience And Education</h2>
-            <p class="ExpAndEducation__text">
-                <ul>
-                    <li>A bit of expirience of freelance</li>
-                    <li>Udemy - Colt Steele</li>
-                    <li>WebStandarts - Vadim Makeev</li>
-                    <li>Eloquent Javascript</li>
-                </ul>
-            </p>
+
+            <ul>
+              <li>A bit of expirience of freelance</li>
+              <li>Udemy - Colt Steele</li>
+              <li>WebStandarts - Vadim Makeev</li>
+              <li>Eloquent Javascript</li>
+            </ul>
           </article>
         </div>
       </section>
     </main>
+    <script>
+      document.querySelector(".header__burger").onclick = function () {
+        document.querySelector(".header__nav-menu").classList.toggle("active");
+      };
+    </script>
   </body>
 </html>

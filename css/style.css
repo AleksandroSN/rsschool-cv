@@ -1,6 +1,8 @@
 :root {
   --colorWhite: hsla(0, 0%, 100%, 1);
   --colorBlack: hsla(0, 0%, 0%, 0.9);
+  --colorStateBlue: hsla(248, 53%, 58%, 0.3);
+  --colorTitles: hsla(248, 60%, 25%, 0.9);
 }
 
 *,
@@ -14,6 +16,8 @@
 body {
   max-width: 1024px;
   margin: 0 auto;
+  padding-top: 1rem;
+  font-family: "Kufam", cursive;
 }
 
 li {
@@ -24,13 +28,34 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--colorTitles);
+}
+
 img {
   max-width: 100%;
   height: auto;
 }
 
+button {
+  border-width: 0;
+}
+
 .header {
-  margin: 1rem 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--colorStateBlue);
+}
+
+.header__burger {
+  cursor: pointer;
+  background-color: transparent;
+  display: none;
+  fill: var(--colorStateBlue);
 }
 
 .header__nav {
@@ -46,9 +71,21 @@ img {
 }
 
 .menu-item {
-  border: 1px solid slateblue;
+  box-shadow: inset 0 0 2px var(--colorStateBlue);
   border-radius: 20px;
   padding: 8px;
+  transition: all 0.25s;
+}
+
+.menu-item:hover {
+  box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-5px);
+}
+
+.header__nav-contacts {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .menu-item__link,
@@ -59,7 +96,7 @@ img {
 .nav-contacts__link {
   display: block;
   padding: 8px;
-  box-shadow: inset 0 0 2px hsla(0, 0%, 78%, 0.5);
+  box-shadow: inset 0 0 2px var(--colorStateBlue);
   border-radius: 4px;
   transition: background-color 0.2s;
 }
@@ -84,14 +121,9 @@ img {
   fill: var(--colorWhite);
 }
 
-.header__nav-contacts {
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
-}
-
 .mainSection {
   display: flex;
+  padding-top: 0.8rem;
 }
 
 .mainSection__photo {
@@ -107,6 +139,55 @@ img {
   margin-top: 1rem;
 }
 
+.mainSection__text article h2 {
+  padding-bottom: 0.5rem;
+}
+
 #ExpAndEducation ul li {
   list-style: inside;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 1rem;
+  }
+  .header__burger {
+    display: block;
+  }
+
+  .header__nav-menu {
+    display: none;
+  }
+
+  .header__nav-menu.active {
+    animation: fade-in 0.25s;
+    position: absolute;
+    background-color: hsla(0, 0%, 100%, 1);
+    top: 14%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .menu-item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  .mainSection {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 0;
+  }
 }
