@@ -5,12 +5,26 @@
   --colorTitles: hsla(248, 60%, 25%, 0.9);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+@keyframes slideIn {
+  
+    from {
+      transform: translateX(0);
+    } to {
+      transform: translateX(180px);
+    }
+  
 }
 
 body {
@@ -66,8 +80,8 @@ button {
 
 .header__nav-menu {
   display: flex;
-  justify-content: space-between;
   flex: 1;
+  gap: 5px;
 }
 
 .menu-item {
@@ -82,9 +96,12 @@ button {
   transform: translateY(-5px);
 }
 
+.menu-item:hover:last-child {
+  animation: 1s infinite alternate slideIn;
+}
+
 .header__nav-contacts {
   display: flex;
-  flex: 1;
   justify-content: flex-end;
 }
 
@@ -147,15 +164,6 @@ button {
   list-style: inside;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @media (max-width: 1024px) {
   .header {
     padding: 1rem;
@@ -165,19 +173,32 @@ button {
   }
 
   .header__nav-menu {
-    display: none;
-  }
-
-  .header__nav-menu.active {
-    animation: fade-in 0.25s;
-    position: absolute;
-    background-color: hsla(0, 0%, 100%, 1);
     top: 14%;
-    width: 90%;
-    display: flex;
+    width: 270px;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    position: absolute;
+    background-color: hsla(0, 0%, 100%, 1);
+    background: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.25s, opacity 0.25s linear;
+  }
+
+  .header__nav-menu.active {    
+    transition: opacity 0.5s;
+    visibility: visible;
+    opacity: 1;
+    
+  }
+
+  .menu-item {
+    background: var(--colorWhite);
+  }
+
+  .menu-item:hover:last-child {
+    animation: none;
   }
 
   .menu-item:not(:last-child) {
