@@ -1,1 +1,1 @@
-'repo for rsschool-cv' 
+https://aleksandrosn.github.io/rsschool-cv/
